@@ -1,7 +1,9 @@
 # 📝 Laporan Tugas Akhir
 
 **Mata Kuliah**: Sistem Operasi
+
 **Semester**: Genap / Tahun Ajaran 2024–2025
+
 **Nama**: Indah Ruwahna Anugraheni
 **NIM**: 240202866
 **Modul yang Dikerjakan**:
