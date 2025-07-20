@@ -44,6 +44,7 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
 * Parent dan child berbagi halaman, tapi saat salah satu menulis, salinan           dibuat.
   
 **Output**
+
   Child sees: Y
   
   Parent sees: X
@@ -53,6 +54,7 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
 * Menulis di satu proses, membaca di proses lain.
   
 **Output**
+
   Child reads: A
   
   Parent reads: B
@@ -77,7 +79,6 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
 2. Halaman tidak dicopy saat terjadi write (karena lupa cek COW flag).
 3. Kesalahan offset pada USERTOP menyebabkan shared memory overwrite stack.
 4. Syscall shmget() tidak berfungsi jika lupa mendaftarkan syscall atau page tidak    di-map.
-
 
 ---
 
