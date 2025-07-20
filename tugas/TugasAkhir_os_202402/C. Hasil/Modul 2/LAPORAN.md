@@ -9,7 +9,8 @@
 **NIM**: 240202866
 
 **Modul yang Dikerjakan**:
-`(Modul 2 – Penjadwalan CPU Non-Preemptive Berbasis Prioritas)`
+
+(Modul 2 – Penjadwalan CPU Non-Preemptive Berbasis Prioritas)
 
 ---
 
