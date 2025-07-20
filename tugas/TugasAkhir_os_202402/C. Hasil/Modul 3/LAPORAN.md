@@ -42,17 +42,18 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
 **1. cowtest**
 * Menguji CoW saat fork() dipanggil.
 * Parent dan child berbagi halaman, tapi saat salah satu menulis, salinan           dibuat.
+  
 **Output**
-    Child sees: Y
-    Parent sees: X
+  Child sees: Y
+  Parent sees: X
      
 **2. shmtest**
-
-     * Menguji alokasi shared memory antar dua proses.
-     * Menulis di satu proses, membaca di proses lain.
-   **Output**
-     Child reads: A
-     Parent reads: B
+* Menguji alokasi shared memory antar dua proses.
+* Menulis di satu proses, membaca di proses lain.
+* 
+**Output**
+  Child reads: A
+  Parent reads: B
 
      
 ---
