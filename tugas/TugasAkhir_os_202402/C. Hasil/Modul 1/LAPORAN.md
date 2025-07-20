@@ -82,27 +82,25 @@ PID     MEM     NAME
 Read Count Sebelum: 4
 hello
 Read Count Setelah: 5
+
 ```
 
 <img width="566" height="397" alt="ptest_rtest_hello" src="https://github.com/user-attachments/assets/b87618b7-cde2-4c8d-a904-e98cc62978ee" />
-
-
-
-
-
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
 
 ---
 
 ## ⚠️ Kendala yang Dihadapi
 
-Tuliskan kendala (jika ada), misalnya:
-
-* Salah implementasi `page fault` menyebabkan panic
-* Salah memetakan alamat shared memory ke USERTOP
-* Proses biasa bisa akses audit log (belum ada validasi PID)
+1. Kesalahan Format atau Tipe Data
+Kesalahan seperti menggunakan tanda . alih-alih -> saat mengakses struct pointer, atau mendeklarasikan variabel dengan tipe yang salah sering menyebabkan error saat kompilasi atau hasil yang tidak sesuai.
+2. Syscall tidak dikenali
+Terjadi karena lupa menambahkan entri di syscall.h, syscall.c, dan usys.S.
+3. Kernel panic saat akses pointer
+Salah ukuran pada argptr() menyebabkan crash; diperbaiki dengan memastikan ukuran struct benar.
+4. Nilai struct tidak terbaca
+Pointer dari user-space belum valid atau tidak dialokasikan dengan benar.
+5. Program uji tidak muncul di xv6
+Lupa menambahkan ke UPROGS di Makefile, sehingga tidak terinstall.
 
 ---
 
