@@ -1,12 +1,15 @@
 # 📝 Laporan Tugas Akhir
 
 **Mata Kuliah**: Sistem Operasi
-**Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Nama Lengkap>`
-**NIM**: `<Nomor Induk Mahasiswa>`
-**Modul yang Dikerjakan**:
-`(Contoh: Modul 1 – System Call dan Instrumentasi Kernel)`
 
+**Semester**: Genap / Tahun Ajaran 2024–2025
+
+**Nama**: Indah Ruwahna Anugraheni
+
+**NIM**: 240202866
+
+**Modul yang Dikerjakan**:
+( Modul 3 – Copy-on-Write Fork dan Shared Memory ala System V )
 ---
 
 ## 📌 Deskripsi Singkat Tugas
