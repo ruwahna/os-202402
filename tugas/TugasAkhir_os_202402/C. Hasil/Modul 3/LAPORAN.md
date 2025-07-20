@@ -45,14 +45,16 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
   
 **Output**
   Child sees: Y
+  
   Parent sees: X
      
 **2. shmtest**
 * Menguji alokasi shared memory antar dua proses.
 * Menulis di satu proses, membaca di proses lain.
-* 
+  
 **Output**
   Child reads: A
+  
   Parent reads: B
 
      
