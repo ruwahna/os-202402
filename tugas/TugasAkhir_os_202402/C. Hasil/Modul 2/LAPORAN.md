@@ -36,8 +36,11 @@ Mengubah algoritma penjadwalan proses di kernel xv6-public dari Round Robin menj
 ## ✅ Uji Fungsionalitas
 
 1. ptest modul2: menguji penjadwalan berdasarkan prioritas
+   
    *Child 2 diberi prioritas tinggi (10)
+   
    *Child 1 diberi prioritas rendah (90)
+   
    *Diharapkan output: Child 2 selesai muncul sebelum Child 1 selesai
 
 ---
