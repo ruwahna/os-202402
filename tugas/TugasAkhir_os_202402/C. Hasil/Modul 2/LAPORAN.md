@@ -17,7 +17,6 @@
 ## 📌 Deskripsi Singkat Tugas
 
 * **Modul 2 Penjadwalan CPU Non-Preemptive Berbasis Prioritas**:
-  
 Mengubah algoritma penjadwalan proses di kernel xv6-public dari Round Robin menjadi Non-Preemptive Priority Scheduling. Setiap proses memiliki nilai prioritas (semakin kecil angkanya, semakin tinggi prioritasnya), dan scheduler hanya akan menjalankan proses RUNNABLE dengan prioritas tertinggi tanpa melakukan preemption.
 ---
 
