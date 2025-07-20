@@ -1,4 +1,4 @@
-<img width="566" height="397" alt="ptest_rtest_hello" src="https://github.com/user-attachments/assets/b87618b7-cde2-4c8d-a904-e98cc62978ee" /># 📝 Laporan Tugas Akhir
+# 📝 Laporan Tugas Akhir
 
 **Mata Kuliah**: Sistem Operasi
 
@@ -84,7 +84,7 @@ hello
 Read Count Setelah: 5
 ```
 
-![Uploading ptest_rtest_hello.png…]()
+<img width="566" height="397" alt="ptest_rtest_hello" src="https://github.com/user-attachments/assets/b87618b7-cde2-4c8d-a904-e98cc62978ee" />
 
 
 
