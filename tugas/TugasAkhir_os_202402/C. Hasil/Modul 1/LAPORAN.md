@@ -23,6 +23,7 @@ getpinfo(struct pinfo *ptable)
 1. Untuk mendapatkan informasi proses yang aktif, yaitu PID, ukuran memori, dan nama proses.
    
 getReadCount()
+
 2. Untuk menghitung jumlah total pemanggilan read() sejak sistem di-boot.
 
 Modifikasi ini bertujuan untuk mempraktikkan mekanisme system call di dalam kernel dan menambahkan instrumentasi dasar untuk pelacakan aktivitas sistem.
