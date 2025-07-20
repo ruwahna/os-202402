@@ -31,15 +31,25 @@ Modifikasi ini bertujuan untuk mempraktikkan mekanisme system call di dalam kern
 
 ## 🛠️ Rincian Implementasi
 
-Tuliskan secara ringkas namun jelas apa yang Anda lakukan:
+1. Menambahkan struktur struct pinfo di proc.h untuk menampung informasi proses aktif.
 
-### Contoh untuk Modul 1:
+2. Menambahkan variabel global readcount di sysproc.c untuk mencatat jumlah pemanggilan read().
 
-* Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-* Mengedit `user.h`, `usys.S`, dan `syscall.h` untuk mendaftarkan syscall
-* Menambahkan struktur `struct pinfo` di `proc.h`
-* Menambahkan counter `readcount` di kernel
-* Membuat dua program uji: `ptest.c` dan `rtest.c`
+3. Mendeklarasikan nomor syscall baru di syscall.h (SYS_getpinfo dan SYS_getreadcount).
+
+4. Mendaftarkan syscall ke dalam tabel syscalls[] di syscall.c.
+
+5. Menambahkan deklarasi syscall di user.h dan implementasi stub di usys.S.
+
+6. Implementasi fungsi sys_getpinfo() dan sys_getreadcount() di sysproc.c.
+
+7. Menambahkan instruksi readcount++ di awal fungsi sys_read() di sysfile.c.
+
+8. Menyusun dua program user-level untuk menguji kedua syscall: ptest.c dan rtest.c.
+
+9. Menambahkan ptest dan rtest ke bagian UPROGS pada Makefile.
+
+
 ---
 
 ## ✅ Uji Fungsionalitas
