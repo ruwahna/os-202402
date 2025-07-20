@@ -1,87 +1,69 @@
 # 📝 Laporan Tugas Akhir
 
 **Mata Kuliah**: Sistem Operasi
+
 **Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Nama Lengkap>`
-**NIM**: `<Nomor Induk Mahasiswa>`
+
+**Nama**: Indah Ruwahna Anugraheni
+
+**NIM**: 240202866
+
 **Modul yang Dikerjakan**:
-`(Contoh: Modul 1 – System Call dan Instrumentasi Kernel)`
+
+(Modul 5 – Audit dan Keamanan Sistem)
 
 ---
 
 ## 📌 Deskripsi Singkat Tugas
-
-Tuliskan deskripsi singkat dari modul yang Anda kerjakan. Misalnya:
-
-* **Modul 1 – System Call dan Instrumentasi Kernel**:
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
+    Modul ini menambahkan fitur audit log ke kernel xv6 untuk mencatat informasi       setiap pemanggilan syscall. Audit log ini hanya dapat diakses oleh proses          dengan PID 1 melalui syscall get_audit_log() dan ditampilkan oleh program          user-space bernama audit.
 ---
 
 ## 🛠️ Rincian Implementasi
 
-Tuliskan secara ringkas namun jelas apa yang Anda lakukan:
-
-### Contoh untuk Modul 1:
-
-* Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-* Mengedit `user.h`, `usys.S`, dan `syscall.h` untuk mendaftarkan syscall
-* Menambahkan struktur `struct pinfo` di `proc.h`
-* Menambahkan counter `readcount` di kernel
-* Membuat dua program uji: `ptest.c` dan `rtest.c`
+1. Membuat struktur struct audit_entry untuk menyimpan pid, syscall_num, dan tick
+2. Menambahkan buffer log dan variabel index di kernel
+3. Menambahkan fungsi log_syscall() dan memanggilnya di setiap syscall
+4. Implementasi syscall baru get_audit_log() di sysproc.c dan syscall.c
+5. Meregistrasikan syscall di syscall.h, usys.S, dan user.h
+6. Membuat program user-space audit.c untuk menampilkan isi log
+7. Menambahkan audit ke Makefile dalam daftar UPROGS
 ---
 
 ## ✅ Uji Fungsionalitas
 
-Tuliskan program uji apa saja yang Anda gunakan, misalnya:
-
-* `ptest`: untuk menguji `getpinfo()`
-* `rtest`: untuk menguji `getReadCount()`
-* `cowtest`: untuk menguji fork dengan Copy-on-Write
-* `shmtest`: untuk menguji `shmget()` dan `shmrelease()`
-* `chmodtest`: untuk memastikan file `read-only` tidak bisa ditulis
-* `audit`: untuk melihat isi log system call (jika dijalankan oleh PID 1)
+1. audit: menampilkan isi audit log jika dijalankan oleh PID 1
+2. Syscall apapun yang dipanggil akan tercatat secara otomatis
+3. Audit log tidak bisa diakses oleh proses selain PID 1
 
 ---
 
 ## 📷 Hasil Uji
 
-Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
-
-### 📍 Contoh Output `cowtest`:
-
+**Output audit oleh PID ≠ 1**
 ```
-Child sees: Y
-Parent sees: X
+$ audit
+Access denied or error.
 ```
+**Output audit oleh PID = 1**
+```
+=== Audit Log ===
+[0] PID=1 SYSCALL=5 TICK=2
+[1] PID=1 SYSCALL=6 TICK=2
+[2] PID=1 SYSCALL=10 TICK=3
+```
+---
+## 📷 Screenshot
 
-### 📍 Contoh Output `shmtest`:
-
-```
-Child reads: A
-Parent reads: B
-```
-
-### 📍 Contoh Output `chmodtest`:
-
-```
-Write blocked as expected
-```
-
-Jika ada screenshot:
-
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
+<img width="923" height="444" alt="audit_modul5" src="https://github.com/user-attachments/assets/7495bc4d-a0e1-430f-9c79-6621e057144f" />
 
 ---
 
 ## ⚠️ Kendala yang Dihadapi
 
-Tuliskan kendala (jika ada), misalnya:
-
-* Salah implementasi `page fault` menyebabkan panic
-* Salah memetakan alamat shared memory ke USERTOP
-* Proses biasa bisa akses audit log (belum ada validasi PID)
+1. Audit log hanya bisa diakses oleh PID 1, sehingga perlu mengedit init.c untuk      pengujian
+2. Kadang log kosong jika belum ada syscall dipanggil
+3. Log memiliki batasan jumlah (misal 128 entri), perlu dijaga agar tidak overflow
+4. Salah pointer atau argumen di syscall bisa menyebabkan log tidak terbaca
 
 ---
 
