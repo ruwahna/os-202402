@@ -17,8 +17,8 @@
 
 **Modul 1 – System Call dan Instrumentasi Kernel**:
 
-Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
----
+**Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
+---**
 
 ## 🛠️ Rincian Implementasi
 
