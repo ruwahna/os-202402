@@ -40,8 +40,10 @@ Modul ini mengimplementasikan dua fitur memori di xv6:
 ## ✅ Program Uji
 
 **1. cowtest**
+
      * Menguji CoW saat fork() dipanggil. 
      * Parent dan child berbagi halaman, tapi saat salah satu menulis, salinan           dibuat.
+     
   **Output**
     Child sees: Y
     Parent sees: X
