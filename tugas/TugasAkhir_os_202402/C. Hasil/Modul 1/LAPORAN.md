@@ -17,8 +17,18 @@
 
 **Modul 1 – System Call dan Instrumentasi Kernel**:
 
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
----**
+Modul ini berfokus pada penambahan dua buah system call baru dalam kernel xv6-public:
+
+getpinfo(struct pinfo *ptable)
+→ Untuk mendapatkan informasi proses yang aktif, yaitu PID, ukuran memori, dan nama proses.
+
+getReadCount()
+→ Untuk menghitung jumlah total pemanggilan read() sejak sistem di-boot.
+
+Modifikasi ini bertujuan untuk mempraktikkan mekanisme system call di dalam kernel dan menambahkan instrumentasi dasar untuk pelacakan aktivitas sistem.
+
+  
+---
 
 ## 🛠️ Rincian Implementasi
 
