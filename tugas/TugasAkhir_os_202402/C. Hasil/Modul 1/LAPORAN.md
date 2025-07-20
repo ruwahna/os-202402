@@ -1,4 +1,4 @@
-# 📝 Laporan Tugas Akhir
+<img width="566" height="397" alt="ptest_rtest_hello" src="https://github.com/user-attachments/assets/b87618b7-cde2-4c8d-a904-e98cc62978ee" /># 📝 Laporan Tugas Akhir
 
 **Mata Kuliah**: Sistem Operasi
 
@@ -54,42 +54,41 @@ Modifikasi ini bertujuan untuk mempraktikkan mekanisme system call di dalam kern
 
 ## ✅ Uji Fungsionalitas
 
-Tuliskan program uji apa saja yang Anda gunakan, misalnya:
+Program yang digunakan untuk pengujian:
 
-* `ptest`: untuk menguji `getpinfo()`
-* `rtest`: untuk menguji `getReadCount()`
-* `cowtest`: untuk menguji fork dengan Copy-on-Write
-* `shmtest`: untuk menguji `shmget()` dan `shmrelease()`
-* `chmodtest`: untuk memastikan file `read-only` tidak bisa ditulis
-* `audit`: untuk melihat isi log system call (jika dijalankan oleh PID 1)
+1. ptest → Menguji apakah getpinfo() berhasil menampilkan informasi proses yang sedang aktif.
 
+2. rtest → Menguji apakah getReadCount() menghitung jumlah read() secara akurat.
+   
 ---
 
 ## 📷 Hasil Uji
 
 Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
 
-### 📍 Contoh Output `cowtest`:
+### 📍 Contoh Output `ptest`:
 
 ```
-Child sees: Y
-Parent sees: X
+== Info Proses Aktif ==
+PID     MEM     NAME
+1       4096    init
+2       2048    sh
+3       2048    ptest
 ```
 
-### 📍 Contoh Output `shmtest`:
+### 📍 Contoh Output `rtest`:
 
 ```
-Child reads: A
-Parent reads: B
+Read Count Sebelum: 4
+hello
+Read Count Setelah: 5
 ```
 
-### 📍 Contoh Output `chmodtest`:
+![Uploading ptest_rtest_hello.png…]()
 
-```
-Write blocked as expected
-```
 
-Jika ada screenshot:
+
+
 
 ```
 ![hasil cowtest](./screenshots/cowtest_output.png)
